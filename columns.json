@@ -1,0 +1,10 @@
+[
+  {"name":"id","title":"Eser"},
+  {"name":"ad","title":"Ad"},
+  {"name":"makam","title":"Makam"},
+  {"name":"bestekar","title":"Bestekar"},
+  {"name":"tur","title":"Tür"},
+  {"name":"form","title":"Form"},
+  {"name":"usul","title":"Usül"},
+  {"name":"yazar","title":"Yazar"}
+]
