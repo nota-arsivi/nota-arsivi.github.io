@@ -36,21 +36,12 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand active">FooTable</a>
+            <a class="navbar-brand active">Zeki Atkoşar</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-                <li><a href="docs/getting-started.html">Getting started</a></li>
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-                       aria-expanded="false">Components <span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="docs/components/editing.html">Editing</a></li>
-                        <li><a href="docs/components/filtering.html">Filtering</a></li>
-                        <li><a href="docs/components/paging.html">Paging</a></li>
-                        <li><a href="docs/components/sorting.html">Sorting</a></li>
-                    </ul>
-                </li>
+                <li><a href="docs/getting-started.html">Önyazı</a></li>
+                <li><a href="docs/getting-started.html">Hakkında</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="docs/jsdocs/index.html" target="_blank">JSDocs</a></li>
@@ -65,13 +56,9 @@
 <div class="jumbotron">
 
     <div class="container">
-        <h1>FooTable</h1>
-        <h2>A responsive table plugin built on jQuery and made for Bootstrap.</h2>
-        <p>Fear not, it also works without Bootstrap!</p>
-        <p class="align-center">
-            <a class="btn btn-primary btn-lg" href="docs/getting-started.html#download" role="button">Download
-                FooTable</a>
-        </p>
+        <h1>Zeki Atkoşar</h1>
+        <h2>Türk Sanat Müziği Nota Arşivi</h2>
+        <p>Birbirinden değerli eserlerin nota arşivi...</p>
     </div>
 
 </div>
@@ -95,10 +82,22 @@
 <!-- Initialize FooTable -->
 <script>
 
-    let data;
+    let my_data;
     jQuery(function ($) {
-        data = $.get("rows.json");
+        $.ajax({
+            async: false,
+            type: 'GET',
+            url: 'rows.json',
+            success: function(data) {
+                my_data = data;
+                for (let i=0; i<my_data.length; i++) {
+                    my_data[i]["yazar"] = "Zeki Atkoşar";
+                    my_data[i]["link"] = "<a href='notalar/" + my_data[i]["id"].toString() + ".pdf'>İndir</a>";
+                }
+            }
+        });
     });
+
 
     jQuery(function ($) {
         $('.table').footable({
@@ -116,7 +115,7 @@
                 "enabled": true
             },
             "columns": $.get("columns.json"),
-            "rows": data
+            "rows": my_data
         });
     });
 </script>
