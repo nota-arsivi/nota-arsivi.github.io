@@ -6,5 +6,6 @@
   {"name":"tur","title":"Tür"},
   {"name":"form","title":"Form"},
   {"name":"usul","title":"Usül"},
-  {"name":"yazar","title":"Yazar"}
+  {"name":"yazar","title":"Nota Yazarı"},
+  {"name": "link", "title":"İndir", "data-type":"html"}
 ]
