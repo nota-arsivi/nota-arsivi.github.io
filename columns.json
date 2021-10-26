@@ -7,5 +7,5 @@
   {"name":"form","title":"Form"},
   {"name":"usul","title":"Usül"},
   {"name":"yazar","title":"Nota Yazarı"},
-  {"name": "link", "title":"İndir", "data-type":"html"}
+  {"name": "link", "title":"İndir", "data-type":"html", "filterable":false}
 ]
