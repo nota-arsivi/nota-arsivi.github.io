@@ -91,7 +91,6 @@
             success: function(data) {
                 my_data = data;
                 for (let i=0; i<my_data.length; i++) {
-                    my_data[i]["yazar"] = "Zeki Atkoşar";
                     my_data[i]["link"] = "<a href='notalar/" + my_data[i]["id"].toString() + ".pdf'>İndir</a>";
                 }
             }
